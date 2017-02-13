@@ -1,0 +1,152 @@
+
+/* General */
+
+html {
+    font-family: "San Francisco", "Helvetica Neue", "Helvetica", sans-serif;
+}
+
+.container {
+    padding: 20px;
+}
+
+label {
+    width: 165px;
+    height: 165px;
+    background-color: rgb(200,200,200);
+    background: url('daoko.jpg');
+    background-size: cover;
+    position: relative;
+    border-radius: 3px;
+    border: 0.1px solid rgba(100,100,100,0.3);
+    margin-top: 10px;
+    display: block;
+}
+
+.description {
+    letter-spacing: 0.3px;
+}
+
+.description h1 {
+    font-weight: 400;
+    font-size: 12px;
+    margin-top: 10px;
+    display: block;
+}
+
+.description h2 {
+    color: rgb(150,150,150);
+    font-weight: 400;
+    font-size: 11px;
+    margin-top: -4.5px;
+}
+
+.albuminfo {
+    background: rgb(245,245,245);
+    border-top: 1px solid rgb(220,220,220);
+    border-bottom: 1px solid rgb(220,220,220);
+    padding-bottom: 13px;
+    margin: 17px -20px 0 -20px;
+    overflow: hidden;
+}
+
+.albuminfo img {
+    width: 85px;
+    height: 85px;
+    border-radius: 3px;
+    margin-top: 10px;
+    float: left;
+    padding-right: 23px;
+}
+
+.albuminfo h1 {
+    font-weight: 600;
+    font-size: 24px;
+    margin: 14px 0 0 0;
+}
+
+.albuminfo h2 {
+    font-weight: 400;
+    font-size: 24px;
+    color: #2E8AF7;
+    margin: 1px 0 0 0;
+}
+
+.albuminfo h3 {
+    font-weight: 200;
+    font-size: 13px;
+    color: rgb(140,140,140);
+    margin: 5px 0 0 0;
+}
+
+.albuminfo .song {
+    margin: 20px 0;
+    padding-bottom: 6px;
+    border-top: 1px solid rgb(220,220,220);
+    border-bottom: 1px solid rgb(220,220,220);
+}
+
+.albuminfo .song h1 {
+    margin: 8px 0 0 0;
+    font-size: 13px;
+    font-weight: 200;
+    color: rgb(140,140,140);
+    float: left;
+}
+
+.albuminfo .song h2 {
+    margin: 8px 0 0 40px;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgb(0,0,0);
+}
+
+.albuminfo h4 {
+    color: #2E8AF7;
+    font-weight: 400;
+    font-size: 13px;
+    padding-top: 5px;
+}
+
+
+/* The clever stuff */
+
+#demo, .albuminfo {
+    /* Hide the checkbox and album info */
+    display: none;
+}
+
+#demo:checked + label { 
+    /* This works because, when demo is checked,
+    a '#demo:checked' element exists,
+    making this valid for the 'label' immediately after #demo:checked. */
+
+    animation-name: Lift5;
+    animation-duration: 0.2s;
+    top: -5px;
+    box-shadow: 0 5px 10px 2px rgba(0,0,0,0.3);
+}
+
+#demo:checked + label + .description + .albuminfo {
+    /* This works for the same reason as above. */
+    animation-name: OpenDrawer;
+    animation-duration: 0.4s;
+    display: block;
+}
+
+/* Animations */
+
+@-webkit-keyframes Lift5 { /* Safari 4-8 */
+  0%   { top: 0; }
+  100% { top: -5px; }
+}
+
+@keyframes Lift5 {
+  0%   { top: 0; }
+  100% { top: -5px; }
+}
+
+@keyframes OpenDrawer {
+  0%   { height: 0; }
+  100% { height: 238px; }
+}
+
