@@ -3,7 +3,7 @@
 
 This demo shows iTunes 12 style album art buttons, where you click on the album and it 'floats' up, and album info appears below it.
 
-![ScreenShot](screenshot.jpg)
+![Screenshot](screenshot.png)
 
 
 ## License
